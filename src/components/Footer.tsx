@@ -26,9 +26,9 @@ export default function Footer() {
       role="contentinfo"
       aria-label="Footer"
     >
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-6">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-5">
-          <div className="flex items-center gap-4">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 min-[380px]:px-6 py-6">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-5 text-center md:text-left">
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
             <Link
               href="/"
               className="text-lg font-semibold tracking-tight text-foreground focus-visible"
@@ -41,8 +41,8 @@ export default function Footer() {
             </span>
           </div>
 
-          <nav aria-label="Footer">
-            <ul className="flex items-center gap-5" role="list">
+          <nav aria-label="Footer" className="w-full md:w-auto">
+            <ul className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2" role="list">
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <Link
@@ -56,7 +56,7 @@ export default function Footer() {
             </ul>
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center justify-center gap-2.5 sm:gap-3 flex-wrap">
             <span className="hidden lg:flex items-center gap-1.5 text-xs font-light text-foreground/50">
               <Clock size={14} weight="light" aria-hidden="true" />
               Tue–Sun 10 AM – 10 PM
@@ -74,7 +74,7 @@ export default function Footer() {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-full bg-card/80 border border-border/50 text-foreground/60 hover:text-foreground hover:border-border transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] focus-visible"
+                className="p-2.5 sm:p-2 min-w-[44px] min-h-[44px] sm:min-w-0 sm:min-h-0 flex items-center justify-center rounded-full bg-card/80 border border-border/50 text-foreground/60 hover:text-foreground hover:border-border transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] focus-visible"
                 aria-label={social.label}
               >
                 <social.icon size={16} weight="light" aria-hidden="true" />

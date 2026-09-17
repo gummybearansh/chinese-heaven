@@ -36,14 +36,14 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent" />
       </div>
 
-      <main className="relative z-10 w-full max-w-7xl mx-auto px-6 py-20 sm:py-32">
+      <main className="relative z-10 w-full max-w-7xl mx-auto px-4 min-[380px]:px-6 py-16 sm:py-32">
         <div className="text-center">
-          <p className="hero-subtitle inline-flex items-center rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-white/70 dark:bg-black/50 text-foreground/70 border border-black/10 dark:border-white/10 backdrop-blur-md mb-6">
+          <p className="hero-subtitle inline-flex items-center rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-white/70 dark:bg-black/50 text-foreground/70 border border-black/10 dark:border-white/10 backdrop-blur-md mb-5 sm:mb-6 max-w-full">
             Est. 1978 — Cantonese Kitchen
           </p>
           <h1
             id="hero-title"
-            className="hero-title font-display max-w-6xl w-full mx-auto text-center font-medium text-foreground leading-[1.02]"
+            className="hero-title font-display max-w-6xl w-full mx-auto text-center font-medium text-foreground leading-[1.02] text-balance"
             style={{
               fontSize: "clamp(3rem, 7vw, 6.5rem)",
               lineHeight: "1.02",
@@ -51,22 +51,22 @@ export default function Hero() {
             }}
           >
             Where Cantonese Tradition
-            <br />
-            <em className="font-normal">Meets Contemporary Craft</em>
+            <br className="hidden min-[420px]:block" />
+            <span className="block min-[420px]:inline"> <em className="font-normal">Meets Contemporary Craft</em></span>
           </h1>
 
           <p
-            className="hero-subtitle max-w-2xl mx-auto mt-8 text-lg sm:text-xl md:text-2xl font-light text-foreground/70 leading-relaxed text-balance"
+            className="hero-subtitle max-w-2xl mx-auto mt-6 sm:mt-8 text-base min-[380px]:text-lg sm:text-xl md:text-2xl font-light text-foreground/70 leading-relaxed text-balance px-1"
           >
             Hand-pulled noodles at dawn. Dim sum folded with intention.
-            <br />
-            Wok hei that carries generations of flavor.
+            <br className="hidden sm:block" />
+            {" "}Wok hei that carries generations of flavor.
           </p>
 
-          <div className="hero-cta-group flex flex-col sm:flex-row items-center justify-center gap-4 mt-12">
+          <div className="hero-cta-group flex flex-col min-[420px]:flex-col sm:flex-row items-stretch min-[420px]:items-center sm:items-center justify-center gap-3 sm:gap-4 mt-8 sm:mt-12 max-w-xs min-[420px]:max-w-sm sm:max-w-none mx-auto sm:mx-0">
             <a
               href="#reservations"
-              className="group relative inline-flex items-center justify-center gap-3 pl-8 pr-2 py-2 text-base font-medium bg-foreground text-background rounded-full overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.98] focus-visible"
+              className="group relative inline-flex items-center justify-center gap-3 pl-8 pr-2 py-2 text-base font-medium bg-foreground text-background rounded-full overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.98] focus-visible w-full min-[420px]:w-full sm:w-auto"
             >
               <span className="relative z-10 py-2">Reserve a Table</span>
               <span className="relative z-10 w-10 h-10 rounded-full bg-white/15 dark:bg-black/20 flex items-center justify-center transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:translate-x-1">
@@ -79,7 +79,7 @@ export default function Hero() {
             </a>
             <a
               href="#menu"
-              className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-medium bg-white/80 dark:bg-black/80 text-foreground border border-black/10 dark:border-white/10 rounded-full backdrop-blur-md transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.98] hover:border-black/20 dark:hover:border-white/20 focus-visible"
+              className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-medium bg-white/80 dark:bg-black/80 text-foreground border border-black/10 dark:border-white/10 rounded-full backdrop-blur-md transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.98] hover:border-black/20 dark:hover:border-white/20 focus-visible w-full min-[420px]:w-full sm:w-auto"
             >
               <MapPin size={18} weight="light" className="transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:-translate-y-0.5" aria-hidden="true" />
               <span className="relative z-10">Find Us</span>

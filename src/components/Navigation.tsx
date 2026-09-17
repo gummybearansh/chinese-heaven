@@ -34,7 +34,7 @@ export default function Navigation() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 px-6 transition-all duration-500 ${scrolled ? "bg-background/80 backdrop-blur-md border-b border-border/50" : "bg-transparent"}`}
+      className={`fixed top-0 left-0 right-0 z-50 px-4 min-[380px]:px-6 transition-all duration-500 ${scrolled ? "bg-background/80 backdrop-blur-md border-b border-border/50" : "bg-transparent"}`}
       role="navigation"
       aria-label="Main navigation"
     >

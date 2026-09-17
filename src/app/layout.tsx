@@ -18,13 +18,25 @@ const display = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Chinese Heaven | Authentic Cantonese Cuisine in the Heart of the City",
+  metadataBase: new URL("https://chineseheaven.com"),
+  title: {
+    default: "Chinese Heaven | Authentic Cantonese Cuisine in the Heart of the City",
+    template: "%s | Chinese Heaven",
+  },
   description: "Experience the art of traditional Cantonese cooking. Hand-pulled noodles, dim sum crafted at dawn, wok hei that sings. Reserve your table at Chinese Heaven.",
   keywords: ["chinese restaurant", "cantonese cuisine", "dim sum", "hand-pulled noodles", "wok hei", "fine dining", "reservation"],
   authors: [{ name: "Chinese Heaven" }],
   creator: "Chinese Heaven",
   publisher: "Chinese Heaven",
   robots: "index, follow",
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/noodle-bowl.svg", type: "image/svg+xml" },
+    ],
+    apple: [{ url: "/apple-icon.svg", type: "image/svg+xml" }],
+    shortcut: "/icon.svg",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",

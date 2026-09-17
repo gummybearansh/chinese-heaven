@@ -152,15 +152,15 @@ export default function TestimonialCarousel() {
               {testimonials.map((testimonial, index) => (
                 <article
                   key={index}
-                  className="testimonial-card w-full flex-shrink-0 px-4 sm:px-6"
+                  className="testimonial-card w-full flex-shrink-0 px-1 min-[380px]:px-4 sm:px-6"
                   role="listitem"
                   aria-roledescription="slide"
                   aria-label={`Testimonial ${index + 1} of ${testimonials.length}`}
                 >
-                  <div className="flex flex-col items-center text-center gap-4">
+                  <div className="flex flex-col items-center text-center gap-4 min-w-0">
                     <div className="relative flex-shrink-0">
                       <div
-                        className="testimonial-avatar w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border-2 border-border/50 ring-4 ring-foreground/5 bg-background"
+                        className="testimonial-avatar relative w-24 h-24 min-[380px]:w-28 min-[380px]:h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border-2 border-border/50 ring-4 ring-foreground/5 bg-background"
                         aria-hidden="true"
                       >
                         <Image
@@ -174,8 +174,8 @@ export default function TestimonialCarousel() {
                       </div>
                     </div>
                     <Stars rating={testimonial.rating} />
-                    <div className="flex-1">
-                      <blockquote className="text-base sm:text-lg font-light leading-relaxed text-foreground/80 mb-4">
+                    <div className="flex-1 min-w-0 w-full">
+                      <blockquote className="text-[15px] min-[380px]:text-base sm:text-lg font-light leading-relaxed text-foreground/80 mb-4 text-balance [overflow-wrap:anywhere] sm:[overflow-wrap:normal]">
                         &ldquo;{testimonial.quote}&rdquo;
                       </blockquote>
                       <footer>
@@ -189,17 +189,17 @@ export default function TestimonialCarousel() {
             </div>
           </div>
 
-          <div className="flex items-center justify-center gap-4 mt-8">
+          <div className="flex items-center justify-center gap-3 sm:gap-4 mt-6 sm:mt-8">
             <button
               onClick={goToPrevious}
-              className="p-3 rounded-full bg-card border border-border/50 hover:bg-card hover:border-border transition-all duration-300 focus-visible"
+              className="p-3 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full bg-card border border-border/50 hover:bg-card hover:border-border transition-all duration-300 focus-visible"
               aria-label="Previous testimonial"
             >
               <CaretLeft size={20} weight="bold" className="text-foreground" aria-hidden="true" />
             </button>
 
             <div
-              className="flex gap-2"
+              className="flex gap-1.5 sm:gap-2 items-center min-h-[44px] px-1"
               role="tablist"
               aria-label="Testimonial navigation"
             >
@@ -207,21 +207,30 @@ export default function TestimonialCarousel() {
                 <button
                   key={index}
                   onClick={() => setCurrentIndex(index)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  className={`rounded-full transition-all duration-300 flex items-center justify-center min-w-[32px] min-h-[32px] ${
                     index === currentIndex
-                      ? "bg-foreground w-6"
-                      : "bg-muted/40 hover:bg-muted/60"
+                      ? ""
+                      : ""
                   }`}
                   role="tab"
                   aria-selected={index === currentIndex}
                   aria-label={`Go to testimonial ${index + 1}`}
-                />
+                >
+                  <span
+                    className={`block h-2 rounded-full transition-all duration-300 ${
+                      index === currentIndex
+                        ? "bg-foreground w-6"
+                        : "bg-muted/40 hover:bg-muted/60 w-2"
+                    }`}
+                    aria-hidden="true"
+                  />
+                </button>
               ))}
             </div>
 
             <button
               onClick={goToNext}
-              className="p-3 rounded-full bg-card border border-border/50 hover:bg-card hover:border-border transition-all duration-300 focus-visible"
+              className="p-3 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full bg-card border border-border/50 hover:bg-card hover:border-border transition-all duration-300 focus-visible"
               aria-label="Next testimonial"
             >
               <CaretRight size={20} weight="bold" className="text-foreground" aria-hidden="true" />

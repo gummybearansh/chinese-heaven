@@ -170,4 +170,45 @@ body {
     font-size: clamp(2.5rem, 8vw, 4rem);
     line-height: 1.1;
   }
+
+  /* Prevent iOS auto-zoom on form fields (mobile only) */
+  .reservation-form input,
+  .reservation-form select {
+    font-size: 16px;
+  }
+
+  /* Stack accordion panels vertically on mobile; desktop keeps hover-expand */
+  .accordion-panel {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+  .accordion-panel:hover {
+    width: 100% !important;
+  }
+  .accordion-panel:not(:hover) {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 639px) {
+  /* Mobile-only hero scale-down: overrides inline clamp without touching desktop */
+  .hero-title {
+    font-size: clamp(2.35rem, 10.5vw, 3.4rem) !important;
+    line-height: 1.08 !important;
+    overflow-wrap: break-word;
+  }
+
+  /* Keep long reservation values inside the glass card */
+  .reservations-section .glass {
+    max-width: 100%;
+  }
+  .reservation-form input[type="date"] {
+    min-height: 48px;
+    max-width: 100%;
+  }
+
+  /* Avoid horizontal scroll from oversized media */
+  img, video {
+    max-width: 100%;
+  }
 }

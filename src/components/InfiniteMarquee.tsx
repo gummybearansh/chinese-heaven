@@ -40,16 +40,16 @@ export default function InfiniteMarquee() {
 
   return (
     <section
-      className="relative py-16 px-6 overflow-hidden border-y border-border/50"
+      className="relative py-12 sm:py-16 px-4 min-[380px]:px-6 overflow-hidden border-y border-border/50"
       aria-label="Ingredients that define us"
     >
       <div className="max-w-7xl mx-auto">
-        <div className="flex items-center justify-between mb-12 px-2">
+        <div className="flex items-center justify-between gap-4 mb-8 sm:mb-12 px-1 sm:px-2">
           <div>
             <p className="text-sm font-medium tracking-widest uppercase text-muted mb-2">
               Sourced Daily
             </p>
-            <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
+            <h3 className="text-xl min-[380px]:text-2xl sm:text-3xl font-bold tracking-tight text-foreground text-balance">
               Ingredients That Define Us
             </h3>
           </div>
@@ -63,7 +63,7 @@ export default function InfiniteMarquee() {
 
         <div className="relative">
           <div
-            className="marquee-content flex gap-8 whitespace-nowrap will-change-transform"
+            className="marquee-content flex gap-4 sm:gap-8 whitespace-nowrap will-change-transform"
             style={{ animationDuration: "30s" }}
             role="list"
             aria-label="Daily sourced ingredients"
@@ -79,11 +79,11 @@ export default function InfiniteMarquee() {
             {marqueeItems.map((item, index) => (
               <div
                 key={index}
-                className="flex flex-col items-start gap-1.5 px-6 py-4 bg-card/60 backdrop-blur-sm rounded-xl border border-border/50 shrink-0 min-w-[280px] transition-all duration-300 hover:bg-card hover:border-border/80 hover:shadow-lg"
+                className="flex flex-col items-start gap-1.5 px-5 sm:px-6 py-4 bg-card/60 backdrop-blur-sm rounded-xl border border-border/50 shrink-0 min-w-[240px] min-[380px]:min-w-[280px] transition-all duration-300 hover:bg-card hover:border-border/80 hover:shadow-lg"
                 role="listitem"
               >
                 <span className="text-base font-medium text-foreground whitespace-nowrap">{item.name}</span>
-                <span className="text-xs font-light text-muted leading-relaxed max-w-[220px]">{item.origin}</span>
+                <span className="text-xs font-light text-muted leading-relaxed max-w-[200px] min-[380px]:max-w-[220px] whitespace-normal">{item.origin}</span>
               </div>
             ))}
           </div>
@@ -92,8 +92,8 @@ export default function InfiniteMarquee() {
             className="absolute inset-0 pointer-events-none"
             aria-hidden="true"
           >
-            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent" />
-            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent" />
+            <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-32 bg-gradient-to-r from-background to-transparent" />
+            <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-32 bg-gradient-to-l from-background to-transparent" />
           </div>
         </div>
       </div>

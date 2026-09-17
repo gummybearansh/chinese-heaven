@@ -91,19 +91,19 @@ export default function PhilosophySection() {
       className="philosophy-section relative"
       aria-labelledby="philosophy-title"
     >
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 min-[380px]:px-6">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-16">
           <div
-            className="philosophy-pinned lg:col-span-5 self-start"
+            className="philosophy-pinned lg:col-span-5 self-start min-w-0"
           >
-            <div className="space-y-8 pr-8 lg:pr-16 w-full lg:h-[100dvh] lg:flex lg:flex-col lg:justify-center">
+            <div className="space-y-6 sm:space-y-8 w-full lg:h-[100dvh] lg:flex lg:flex-col lg:justify-center lg:pr-16">
               <div>
                 <p className="text-sm font-medium tracking-widest uppercase text-muted mb-4">
                   Philosophy
                 </p>
                 <h2
                   id="philosophy-title"
-                  className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-foreground leading-[1.05]"
+                  className="text-4xl min-[380px]:text-5xl md:text-6xl font-bold tracking-tight text-foreground leading-[1.05] text-balance"
                 >
                   Cooking Is
                   <br />
@@ -126,16 +126,16 @@ export default function PhilosophySection() {
             </div>
           </div>
 
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-7 min-w-0">
             <div
-              className="grid grid-cols-2 gap-4 lg:gap-6"
+              className="grid grid-cols-1 min-[480px]:grid-cols-2 gap-4 lg:gap-6"
               role="list"
               aria-label="Philosophy in practice gallery"
             >
               {philosophyImages.map((item, index) => (
                 <article
                   key={index}
-                  className="philosophy-gallery-item group relative aspect-[4/5] rounded-2xl overflow-hidden bg-border/50"
+                  className="philosophy-gallery-item group relative aspect-[4/3] min-[480px]:aspect-[4/5] rounded-2xl overflow-hidden bg-border/50 min-w-0"
                   role="listitem"
                 >
                   <div className="absolute inset-0 image-reveal">
@@ -148,7 +148,7 @@ export default function PhilosophySection() {
                       loading="lazy"
                     />
                   </div>
-                  <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                  <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 bg-gradient-to-t from-black/80 to-transparent">
                     <p className="text-white text-sm font-light leading-relaxed drop-shadow-[0_1px_4px_rgba(0,0,0,0.3)]">
                       {item.caption}
                     </p>

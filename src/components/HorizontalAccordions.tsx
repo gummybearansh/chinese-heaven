@@ -55,7 +55,7 @@ export default function HorizontalAccordions() {
   return (
     <section
       id="menu"
-      className="relative py-24 sm:py-32 md:py-40 px-6 overflow-hidden"
+      className="relative py-16 sm:py-32 md:py-40 px-4 min-[380px]:px-6 overflow-hidden"
       aria-labelledby="accordion-heading"
     >
       <h2
@@ -66,24 +66,24 @@ export default function HorizontalAccordions() {
       </h2>
 
       <div className="max-w-7xl mx-auto">
-        <div className="mb-16 text-center">
+        <div className="mb-10 sm:mb-16 text-center px-1">
           <p className="text-sm font-medium tracking-widest uppercase text-muted mb-3">
             The Foundation
           </p>
-          <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground leading-tight max-w-2xl mx-auto">
+          <h3 className="text-3xl min-[380px]:text-4xl md:text-5xl font-bold tracking-tight text-foreground leading-tight max-w-2xl mx-auto text-balance">
             Three Pillars, One Purpose
           </h3>
         </div>
 
         <div
-          className="flex gap-2 overflow-hidden rounded-2xl"
+          className="flex flex-col min-[640px]:flex-row gap-3 min-[640px]:gap-2 sm:overflow-hidden rounded-2xl"
           role="list"
           aria-label="Culinary philosophy pillars"
         >
           {accordionData.map((item, index) => (
             <article
               key={item.title}
-              className="accordion-panel group relative flex flex-col min-w-0 overflow-hidden rounded-2xl transition-all duration-700 ease-out cursor-pointer"
+              className="accordion-panel group relative flex flex-col min-w-0 overflow-hidden rounded-2xl transition-all duration-700 ease-out cursor-pointer min-h-[420px] min-[640px]:min-h-[560px]"
               style={{
                 width: index === 0 ? "40%" : "30%",
                 minWidth: "120px",
@@ -110,8 +110,8 @@ export default function HorizontalAccordions() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10" />
               </div>
 
-              <div className="relative z-10 flex flex-col h-full p-6 sm:p-8 justify-end text-white">
-                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 transform translate-y-4 group-hover:translate-y-0 w-full sm:max-w-md lg:max-w-lg">
+              <div className="relative z-10 flex flex-col h-full min-h-[420px] min-[640px]:min-h-[560px] p-6 sm:p-8 justify-end text-white">
+                <div className="accordion-copy opacity-100 translate-y-0 min-[640px]:opacity-0 min-[640px]:translate-y-4 min-[640px]:group-hover:opacity-100 min-[640px]:group-hover:translate-y-0 transition-opacity duration-500 delay-100 transform w-full sm:max-w-md lg:max-w-lg">
                   <p className="text-xs font-medium tracking-widest uppercase text-white/70 mb-2">
                     {item.subtitle}
                   </p>

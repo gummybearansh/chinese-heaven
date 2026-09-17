@@ -20,7 +20,7 @@ export default function ReservationsCTA() {
       className="reservations-section relative flex flex-col justify-center"
       aria-labelledby="reservations-title"
     >
-      <div className="relative z-10 w-full glass rounded-[2rem] p-6 sm:p-8 text-center flex flex-col gap-6">
+      <div className="relative z-10 w-full max-w-md mx-auto lg:max-w-none glass rounded-3xl sm:rounded-[2rem] p-5 min-[380px]:p-6 sm:p-8 text-center flex flex-col gap-5 sm:gap-6 overflow-hidden">
         <div>
           <p className="text-sm font-medium tracking-widest uppercase text-muted mb-3">
             Experience
@@ -36,11 +36,11 @@ export default function ReservationsCTA() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 min-[420px]:grid-cols-2 gap-2.5 sm:gap-3">
           {reservationInfo.map((item, index) => (
             <div
               key={item.label}
-              className={`group relative p-4 bg-card/80 backdrop-blur-sm rounded-2xl border border-border/50 hover:border-border transition-colors duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] flex flex-col items-center justify-center text-center h-full ${index === reservationInfo.length - 1 ? "col-span-2" : ""}`}
+              className={`group relative p-4 bg-card/80 backdrop-blur-sm rounded-2xl border border-border/50 hover:border-border transition-colors duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] flex flex-col items-center justify-center text-center h-full min-w-0 overflow-hidden ${index === reservationInfo.length - 1 ? "min-[420px]:col-span-2" : ""}`}
             >
               <div className="w-9 h-9 rounded-xl bg-foreground/10 flex items-center justify-center mb-2 mx-auto group-hover:bg-foreground/20 transition-colors">
                 <item.icon size={18} weight="light" className="text-foreground" aria-hidden="true" />
@@ -48,7 +48,7 @@ export default function ReservationsCTA() {
               <p className="text-[10px] font-medium tracking-widest uppercase text-muted mb-1">
                 {item.label}
               </p>
-              <p className="text-xs font-light text-foreground leading-relaxed">
+              <p className="text-xs font-light text-foreground leading-relaxed [overflow-wrap:anywhere] min-w-0 max-w-full">
                 {item.value}
               </p>
             </div>
@@ -56,43 +56,46 @@ export default function ReservationsCTA() {
         </div>
 
         <form
-          className="reservation-form grid grid-cols-2 gap-3 text-left"
+          className="reservation-form grid grid-cols-1 min-[420px]:grid-cols-2 gap-2.5 sm:gap-3 text-left"
           onSubmit={(e) => {
             e.preventDefault();
             setRequested(true);
           }}
         >
-          <label className="flex flex-col gap-1.5">
+          <label className="flex flex-col gap-1.5 min-w-0">
             <span className="text-[10px] font-medium tracking-widest uppercase text-muted">Name</span>
             <input
               type="text"
               required
               placeholder="Your name"
-              className="w-full rounded-full bg-white/70 dark:bg-black/40 border border-black/10 dark:border-white/10 px-4 py-2.5 text-sm font-light text-foreground placeholder:text-muted focus:outline-none focus:border-foreground/40 transition-colors"
+              autoComplete="name"
+              className="w-full min-w-0 rounded-full bg-white/70 dark:bg-black/40 border border-black/10 dark:border-white/10 px-4 py-3 min-[420px]:py-2.5 text-base min-[420px]:text-sm font-light text-foreground placeholder:text-muted focus:outline-none focus:border-foreground/40 transition-colors"
             />
           </label>
-          <label className="flex flex-col gap-1.5">
+          <label className="flex flex-col gap-1.5 min-w-0">
             <span className="text-[10px] font-medium tracking-widest uppercase text-muted">Phone</span>
             <input
               type="tel"
               placeholder="(415) 000-0000"
-              className="w-full rounded-full bg-white/70 dark:bg-black/40 border border-black/10 dark:border-white/10 px-4 py-2.5 text-sm font-light text-foreground placeholder:text-muted focus:outline-none focus:border-foreground/40 transition-colors"
+              autoComplete="tel"
+              inputMode="tel"
+              className="w-full min-w-0 rounded-full bg-white/70 dark:bg-black/40 border border-black/10 dark:border-white/10 px-4 py-3 min-[420px]:py-2.5 text-base min-[420px]:text-sm font-light text-foreground placeholder:text-muted focus:outline-none focus:border-foreground/40 transition-colors"
             />
           </label>
-          <label className="flex flex-col gap-1.5">
+          <label className="flex flex-col gap-1.5 min-w-0">
             <span className="text-[10px] font-medium tracking-widest uppercase text-muted">Date</span>
             <input
               type="date"
               required
-              className="w-full rounded-full bg-white/70 dark:bg-black/40 border border-black/10 dark:border-white/10 px-4 py-2.5 text-sm font-light text-foreground focus:outline-none focus:border-foreground/40 transition-colors"
+              className="w-full min-w-0 rounded-full bg-white/70 dark:bg-black/40 border border-black/10 dark:border-white/10 px-4 py-3 min-[420px]:py-2.5 text-base min-[420px]:text-sm font-light text-foreground focus:outline-none focus:border-foreground/40 transition-colors"
             />
           </label>
-          <label className="flex flex-col gap-1.5">
+          <label className="flex flex-col gap-1.5 min-w-0">
             <span className="text-[10px] font-medium tracking-widest uppercase text-muted">Guests</span>
             <select
               required
               defaultValue="2"
-              className="w-full rounded-full bg-white/70 dark:bg-black/40 border border-black/10 dark:border-white/10 px-4 py-2.5 text-sm font-light text-foreground focus:outline-none focus:border-foreground/40 transition-colors"
+              className="w-full min-w-0 rounded-full bg-white/70 dark:bg-black/40 border border-black/10 dark:border-white/10 px-4 py-3 min-[420px]:py-2.5 text-base min-[420px]:text-sm font-light text-foreground focus:outline-none focus:border-foreground/40 transition-colors"
             >
               {["1", "2", "3", "4", "5", "6", "7", "8+"].map((n) => (
                 <option key={n} value={n}>
@@ -103,7 +106,7 @@ export default function ReservationsCTA() {
           </label>
           <button
             type="submit"
-            className="cta-button group col-span-2 inline-flex items-center justify-center gap-3 pl-8 pr-2 py-2 text-base font-medium bg-foreground text-background rounded-full transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.98] focus-visible"
+            className="cta-button group min-[420px]:col-span-2 inline-flex items-center justify-center gap-3 pl-8 pr-2 py-2 text-base font-medium bg-foreground text-background rounded-full transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.98] focus-visible w-full"
           >
             <span className="py-2">Request Table</span>
             <span className="w-10 h-10 rounded-full bg-white/15 flex items-center justify-center transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:translate-x-1">
@@ -111,7 +114,7 @@ export default function ReservationsCTA() {
             </span>
           </button>
           {requested && (
-            <p className="col-span-2 flex items-center justify-center gap-2 text-sm font-light text-foreground">
+            <p className="min-[420px]:col-span-2 flex items-center justify-center gap-2 text-sm font-light text-foreground text-center text-balance px-2">
               <Check size={16} weight="bold" aria-hidden="true" />
               Request received — we confirm by phone shortly.
             </p>

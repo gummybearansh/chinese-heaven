@@ -59,27 +59,27 @@ export default function SignatureDishes() {
   return (
     <section
       id="signature"
-      className="relative py-24 sm:py-32 md:py-40 px-6"
+      className="relative py-16 sm:py-32 md:py-40 px-4 min-[380px]:px-6"
       aria-labelledby="signature-title"
     >
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-20">
+        <div className="text-center mb-10 sm:mb-20 px-1">
           <p className="text-sm font-medium tracking-widest uppercase text-muted mb-4">
             Signature
           </p>
           <h2
             id="signature-title"
-            className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-foreground leading-[1.05] max-w-2xl mx-auto"
+            className="text-3xl min-[380px]:text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-foreground leading-[1.05] max-w-2xl mx-auto text-balance"
           >
             Dishes That Define Us
           </h2>
-          <p className="mt-6 text-lg text-muted max-w-xl mx-auto font-light leading-relaxed">
+          <p className="mt-4 sm:mt-6 text-base min-[380px]:text-lg text-muted max-w-xl mx-auto font-light leading-relaxed px-1">
             Four dishes. Decades of refinement. Each one a non-negotiable standard.
           </p>
         </div>
 
         <div
-          className="group/dishes grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
+          className="group/dishes grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 max-w-md sm:max-w-none mx-auto"
           role="list"
           aria-label="Signature dishes"
         >
@@ -90,7 +90,7 @@ export default function SignatureDishes() {
               role="listitem"
               style={{ zIndex: 4 - index }}
             >
-              <div className="relative aspect-[4/5] overflow-hidden">
+              <div className="relative aspect-[16/11] sm:aspect-[4/5] overflow-hidden">
                 <Image
                   src={dish.image}
                   alt={dish.alt}
@@ -127,10 +127,10 @@ export default function SignatureDishes() {
           ))}
         </div>
 
-        <div className="text-center mt-16">
+        <div className="text-center mt-10 sm:mt-16 px-1">
           <a
             href="#menu"
-            className="inline-flex items-center gap-3 px-8 py-4 text-base font-medium bg-foreground text-background rounded-full hover:opacity-90 hover:scale-[1.02] transition-all duration-300 focus-visible"
+            className="inline-flex w-full sm:w-auto items-center justify-center gap-3 px-8 py-4 text-base font-medium bg-foreground text-background rounded-full hover:opacity-90 hover:scale-[1.02] transition-all duration-300 focus-visible max-w-md sm:max-w-none"
           >
             Explore Full Menu
             <svg

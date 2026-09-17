@@ -36,12 +36,12 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/30 to-background/70" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-14 sm:py-16 grid gap-10 lg:grid-cols-2 lg:gap-0 items-center min-h-[100dvh] lg:divide-x lg:divide-border/50">
-          <div className="lg:pr-12">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 min-[380px]:px-6 py-12 sm:py-16 grid gap-12 sm:gap-10 lg:grid-cols-2 lg:gap-0 items-start lg:items-center lg:min-h-[100dvh] lg:divide-x lg:divide-border/50">
+          <div className="lg:pr-12 min-w-0 w-full max-w-md mx-auto lg:max-w-none">
             <TestimonialCarousel />
           </div>
 
-          <div className="lg:pl-12">
+          <div className="lg:pl-12 min-w-0 w-full">
             <ReservationsCTA />
           </div>
         </div>
