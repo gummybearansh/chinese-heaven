@@ -3,6 +3,7 @@
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ArrowRight, MapPin } from "@phosphor-icons/react";
+import { track } from "@/lib/analytics";
 
 export default function Hero() {
   useGSAP(() => {
@@ -66,6 +67,7 @@ export default function Hero() {
           <div className="hero-cta-group flex flex-col min-[420px]:flex-col sm:flex-row items-stretch min-[420px]:items-center sm:items-center justify-center gap-3 sm:gap-4 mt-8 sm:mt-12 max-w-xs min-[420px]:max-w-sm sm:max-w-none mx-auto sm:mx-0">
             <a
               href="#reservations"
+              onClick={() => track("cta_click", { cta: "reserve", location: "hero" })}
               className="group relative inline-flex items-center justify-center gap-3 pl-8 pr-2 py-2 text-base font-medium bg-foreground text-background rounded-full overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.98] focus-visible w-full min-[420px]:w-full sm:w-auto"
             >
               <span className="relative z-10 py-2">Reserve a Table</span>
@@ -79,6 +81,7 @@ export default function Hero() {
             </a>
             <a
               href="#menu"
+              onClick={() => track("cta_click", { cta: "find_us", location: "hero" })}
               className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-medium bg-white/80 dark:bg-black/80 text-foreground border border-black/10 dark:border-white/10 rounded-full backdrop-blur-md transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.98] hover:border-black/20 dark:hover:border-white/20 focus-visible w-full min-[420px]:w-full sm:w-auto"
             >
               <MapPin size={18} weight="light" className="transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:-translate-y-0.5" aria-hidden="true" />

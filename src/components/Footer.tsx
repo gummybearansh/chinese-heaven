@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { InstagramLogo, TwitterLogo, FacebookLogo, MapPin, Phone, Clock } from "@phosphor-icons/react";
+import { track } from "@/lib/analytics";
 
 const quickLinks = [
   { href: "#menu", label: "Menu" },
@@ -63,6 +64,7 @@ export default function Footer() {
             </span>
             <a
               href="tel:+14155550188"
+              onClick={() => track("phone_click", { location: "footer" })}
               className="hidden lg:flex items-center gap-1.5 text-xs font-light text-foreground/50 hover:text-foreground transition-colors"
             >
               <Phone size={14} weight="light" aria-hidden="true" />

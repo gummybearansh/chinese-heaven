@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Calendar, Check, Clock, MapPin, Phone, Mailbox } from "@phosphor-icons/react";
+import { track } from "@/lib/analytics";
 
 const reservationInfo = [
   { icon: Calendar, label: "Dinner Service", value: "Tue–Sun, 5:30 PM – 10:00 PM" },
@@ -59,6 +60,7 @@ export default function ReservationsCTA() {
           className="reservation-form grid grid-cols-1 min-[420px]:grid-cols-2 gap-2.5 sm:gap-3 text-left"
           onSubmit={(e) => {
             e.preventDefault();
+            track("reservation_request", { location: "reservations" });
             setRequested(true);
           }}
         >
@@ -128,11 +130,12 @@ export default function ReservationsCTA() {
               href="https://resy.com/cities/sf/chinese-heaven"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => track("resy_click", { location: "reservations" })}
               className="font-medium text-foreground hover:underline"
             >
               Book on Resy
             </a>{" "}
-            or call <a href="tel:+14155550188" className="font-medium text-foreground hover:underline">+1 (415) 555-0188</a>
+            or call <a href="tel:+14155550188" onClick={() => track("phone_click", { location: "reservations" })} className="font-medium text-foreground hover:underline">+1 (415) 555-0188</a>
           </p>
         </div>
       </div>

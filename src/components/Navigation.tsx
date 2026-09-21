@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { List, X } from "@phosphor-icons/react";
+import { track } from "@/lib/analytics";
 
 const navLinks = [
   { href: "#menu", label: "Menu" },
@@ -65,7 +66,10 @@ export default function Navigation() {
           <div className="flex items-center gap-4 md:hidden">
             <a
               href="#reservations"
-              onClick={(e) => handleSmoothScroll(e, "#reservations")}
+              onClick={(e) => {
+                track("cta_click", { cta: "reserve", location: "nav" });
+                handleSmoothScroll(e, "#reservations");
+              }}
               className="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-sm font-medium bg-foreground text-background rounded-full hover:opacity-90 transition-opacity focus-visible"
             >
               Reserve
@@ -101,7 +105,10 @@ export default function Navigation() {
             ))}
             <a
               href="#reservations"
-              onClick={(e) => handleSmoothScroll(e, "#reservations")}
+              onClick={(e) => {
+                track("cta_click", { cta: "reserve", location: "nav_mobile" });
+                handleSmoothScroll(e, "#reservations");
+              }}
               className="block px-4 py-3 text-base font-medium text-center bg-foreground text-background rounded-lg hover:opacity-90 transition-opacity mt-4"
             >
               Reserve a Table
